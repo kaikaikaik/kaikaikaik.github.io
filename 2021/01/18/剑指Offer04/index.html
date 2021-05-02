@@ -12,7 +12,7 @@
 
 
 
-<title>LeetCode182 | Kai</title>
+<title>Kai</title>
 
 
 
@@ -110,7 +110,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">LeetCode182</h1>
+            <h1 class="post-title"></h1>
             
                 <div class="post-meta">
                     
@@ -119,68 +119,16 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">January 2, 2021&nbsp;&nbsp;10:22:20</a>
+                        Date: <a href="#">January 18, 2021&nbsp;&nbsp;22:17:31</a>
                         </span>
                     
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/LeetCode/">LeetCode</a>
-                            
-                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <blockquote>
-<p>Write a SQL query to find all duplicate emails in a table named Person.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Id</th>
-<th>Email</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><a href="mailto:&#x61;&#x40;&#98;&#46;&#99;&#x6f;&#x6d;">&#x61;&#x40;&#98;&#46;&#99;&#x6f;&#x6d;</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="mailto:&#x63;&#64;&#x64;&#x2e;&#99;&#x6f;&#109;">&#x63;&#64;&#x64;&#x2e;&#99;&#x6f;&#109;</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="mailto:&#97;&#64;&#x62;&#x2e;&#99;&#111;&#x6d;">&#97;&#64;&#x62;&#x2e;&#99;&#111;&#x6d;</a></td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>For example, your query should return the following for the above table:</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Email</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="mailto:&#97;&#64;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#97;&#64;&#98;&#x2e;&#99;&#x6f;&#x6d;</a></td>
-</tr>
-</tbody></table>
-<p>Use <code>group by</code> key word：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Email <span class="keyword">from</span> Person <span class="keyword">group</span> <span class="keyword">by</span> Email <span class="keyword">having</span> <span class="keyword">count</span> (Email) &gt; <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>The submit result:</p>
-<img src="/Users/kai/Library/Application Support/typora-user-images/image-20210102103507628.png" alt="image-20210102103507628" style="zoom:50%;" />
-
-<p>Another method, use <code>distinct</code>key word:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> a.Email <span class="keyword">from</span> Person a, Person b <span class="keyword">where</span> a.Email = b.Email <span class="keyword">and</span> a.Id != b.Id</span><br></pre></td></tr></table></figure>
-
-<img src="/Users/kai/Library/Application Support/typora-user-images/image-20210102104100270.png" alt="image-20210102104100270" style="zoom:50%;" />
+            
         </div>
         
             <section class="post-copyright">
@@ -193,7 +141,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2021/01/02/LeetCode182/">http://example.com/2021/01/02/LeetCode182/</a></span>
+                        <span><a href="http://example.com/2021/01/18/%E5%89%91%E6%8C%87Offer04/">http://example.com/2021/01/18/%E5%89%91%E6%8C%87Offer04/</a></span>
                     </p>
                 
                 
@@ -245,10 +193,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2021/01/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/">数据库原理</a>
+                <a class="prev" rel="prev" href="/2021/02/02/%E5%89%91%E6%8C%87offer06/">剑指offer06</a>
             
             
-            <a class="next" rel="next" href="/2020/12/21/Linux%E4%B8%AD%E7%9A%84top%E5%91%BD%E4%BB%A4/">Linux中的top命令</a>
+            <a class="next" rel="next" href="/2021/01/09/%E5%89%91%E6%8C%87Offer03/">剑指Offer03</a>
             
         </section>
 
