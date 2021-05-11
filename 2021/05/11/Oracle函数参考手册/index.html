@@ -12,7 +12,7 @@
 
 
 
-<title>Kai</title>
+<title>Oracle函数参考手册 | Kai</title>
 
 
 
@@ -172,7 +172,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title"></h1>
+            <h1 class="post-title">Oracle函数参考手册</h1>
             
                 <div class="post-meta">
                     
@@ -181,7 +181,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">May 5, 2021&nbsp;&nbsp;10:45:21</a>
+                        Date: <a href="#">May 11, 2021&nbsp;&nbsp;23:37:03</a>
                         </span>
                     
                     
@@ -190,7 +190,29 @@
         </header>
 
         <div class="post-content">
-            <h1 id="Something-about-me"><a href="#Something-about-me" class="headerlink" title="Something about me"></a>Something about me</h1>
+            <h1 id="Oracle函数参考手册"><a href="#Oracle函数参考手册" class="headerlink" title="Oracle函数参考手册"></a>Oracle函数参考手册</h1><h2 id="数值型函数"><a href="#数值型函数" class="headerlink" title="数值型函数"></a>数值型函数</h2><h3 id="ABS"><a href="#ABS" class="headerlink" title="ABS"></a>ABS</h3><p>ABS(x)，返回x的绝对值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">abs</span>(<span class="number">100</span>), <span class="keyword">abs</span>(<span class="number">-100</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<h3 id="SIGN"><a href="#SIGN" class="headerlink" title="SIGN"></a>SIGN</h3><p>sign(x)，返回x的正负值，正为1，负为-1，0返回0</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sign</span>(<span class="number">100</span>), <span class="keyword">sign</span>(<span class="number">-100</span>), <span class="keyword">sign</span>(<span class="number">0</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CEIL"><a href="#CEIL" class="headerlink" title="CEIL"></a>CEIL</h3><p>ceil(x)，返回大于等于x的最小整数值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ceil</span>(<span class="number">3.1</span>), <span class="keyword">ceil</span>(<span class="number">2.8</span>+<span class="number">1.3</span>), <span class="keyword">ceil</span>(<span class="number">0</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：4，5，0</p>
+<h3 id="FLOOR"><a href="#FLOOR" class="headerlink" title="FLOOR"></a>FLOOR</h3><p>floor(x)，返回小于等于x的最大整数值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">floor</span>(<span class="number">3.1</span>), <span class="keyword">floor</span>(<span class="number">2.8</span>+<span class="number">1.3</span>),<span class="keyword">floor</span>(<span class="number">0</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：3，4，0</p>
+<h3 id="POWER"><a href="#POWER" class="headerlink" title="POWER"></a>POWER</h3><p>power(x, y)，返回x的y次幂</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">power</span>(<span class="number">2.5</span>,<span class="number">2</span>),<span class="keyword">power</span>(<span class="number">1.5</span>,<span class="number">0</span>),<span class="keyword">power</span>(<span class="number">20</span>,<span class="number">-1</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：6.25，1，0.05</p>
+<h3 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h3><p>exp(y)，返回e的y次幂（e为数学中的常量）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">exp</span>(<span class="number">3</span>),<span class="keyword">exp</span>(<span class="number">0</span>),<span class="keyword">exp</span>(<span class="number">-3</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：20.0855369，1，0.049787068</p>
+
         </div>
         
             <section class="post-copyright">
@@ -250,10 +272,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2021/05/11/Oracle%E5%87%BD%E6%95%B0%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C/">Oracle函数参考手册</a>
             
-            
-            <a class="next" rel="next" href="/2021/05/02/How%20to%20read%20a%20paper/">How to read a paper</a>
+            <a class="next" rel="next" href="/2021/05/05/%E6%9C%AA%E5%91%BD%E5%90%8D/"></a>
             
         </section>
 
