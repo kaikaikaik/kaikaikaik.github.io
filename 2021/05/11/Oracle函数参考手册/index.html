@@ -212,6 +212,19 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">exp</span>(<span class="number">3</span>),<span class="keyword">exp</span>(<span class="number">0</span>),<span class="keyword">exp</span>(<span class="number">-3</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
 
 <p>返回值：20.0855369，1，0.049787068</p>
+<h3 id="LOG"><a href="#LOG" class="headerlink" title="LOG"></a>LOG</h3><p>log(x, y)，返回以x为底的y的对数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">log</span>(<span class="number">4</span>,<span class="number">2</span>), <span class="keyword">log</span>(<span class="number">4</span>,<span class="number">16</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：2，2</p>
+<h3 id="LN"><a href="#LN" class="headerlink" title="LN"></a>LN</h3><p>ln(y)，返回以e为底的y的对数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ln</span>(<span class="number">20</span>), <span class="keyword">ln</span>(<span class="number">1</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：2.99，0</p>
+<h3 id="MOD"><a href="#MOD" class="headerlink" title="MOD"></a>MOD</h3><p>mod(x,y)，返回x除以y的余数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">mod</span>(<span class="number">23</span>,<span class="number">8</span>), <span class="keyword">mod</span>(<span class="number">24</span>,<span class="number">8</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：7，0</p>
+<h3 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h3><p>round(x, y)，返回四舍五入后的值</p>
 
         </div>
         
@@ -273,7 +286,7 @@
         <section class="post-nav">
             
             
-            <a class="next" rel="next" href="/2021/05/05/%E6%9C%AA%E5%91%BD%E5%90%8D/"></a>
+            <a class="next" rel="next" href="/2021/05/02/How%20to%20read%20a%20paper/">How to read a paper</a>
             
         </section>
 
