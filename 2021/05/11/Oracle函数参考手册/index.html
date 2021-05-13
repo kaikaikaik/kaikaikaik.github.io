@@ -224,8 +224,42 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">mod</span>(<span class="number">23</span>,<span class="number">8</span>), <span class="keyword">mod</span>(<span class="number">24</span>,<span class="number">8</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
 
 <p>返回值：7，0</p>
-<h3 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h3><p>round(x, y)，返回四舍五入后的值</p>
+<h3 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h3><p>round(x, y)，返回四舍五入后的值；y不为整数则截取y整数部分，y&gt;0则四舍五入为y位小数，y&lt;0则四舍五入到小数点向左第y位。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">round</span>(<span class="number">5555.6666</span>,<span class="number">2.1</span>),<span class="keyword">round</span>(<span class="number">5555.6666</span>,<span class="number">-2.6</span>),<span class="keyword">round</span>(<span class="number">5555.6666</span>) <span class="keyword">from</span> dual; </span><br></pre></td></tr></table></figure>
 
+<p>返回值：5555.67，5600，5556</p>
+<h3 id="TRUNC"><a href="#TRUNC" class="headerlink" title="TRUNC"></a>TRUNC</h3><p>trunc(x,y)，返回x按精度y截取后的值，y不为整数则截取y整数部分，y&gt;0则截取到y位小数，y&lt;0则截取到小数点向左第y位，小数前其它数据用0表示。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> trunc(<span class="number">5555.66666</span>,<span class="number">2.1</span>),trunc(<span class="number">5555.66666</span>,<span class="number">-2.6</span>),trunc(<span class="number">5555.033333</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：5555.67，5500，5555</p>
+<h3 id="SQRT"><a href="#SQRT" class="headerlink" title="SQRT"></a>SQRT</h3><p>sqrt(x)，返回x的平方根</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sqrt</span>(<span class="number">4</span>), <span class="keyword">sqrt</span>(<span class="number">10</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：2，3.16227766</p>
+<h3 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h3><h4 id="sin"><a href="#sin" class="headerlink" title="sin"></a>sin</h4><p>sin(x)，返回一个数字的正弦值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sin</span>(<span class="number">1</span>,<span class="number">5</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：0.99749498</p>
+<h4 id="sinh"><a href="#sinh" class="headerlink" title="sinh"></a>sinh</h4><p>sinh(x)，返回双曲正弦的值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sin</span>(<span class="number">20</span>),sinh(<span class="number">20</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：0.9129452，242582597.704895</p>
+<h4 id="cos"><a href="#cos" class="headerlink" title="cos"></a>cos</h4><p>cos(x)，返回一个数字的余弦值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">cos</span>(<span class="number">-3.1415927</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：-0.99999999</p>
+<h4 id="cosh"><a href="#cosh" class="headerlink" title="cosh"></a>cosh</h4><p>cosh(x)，返回双曲余弦的值</p>
+<h4 id="tan"><a href="#tan" class="headerlink" title="tan"></a>tan</h4><p>tan(x)，返回数字的正切值</p>
+<h4 id="tanh"><a href="#tanh" class="headerlink" title="tanh"></a>tanh</h4><p>tanh(x)，返回数字x的双曲正切值</p>
+<h4 id="asin"><a href="#asin" class="headerlink" title="asin"></a>asin</h4><p>asin(x)，给出x的反正弦值</p>
+<h4 id="acos"><a href="#acos" class="headerlink" title="acos"></a>acos</h4><p>acos(x)，给出x的反余弦值</p>
+<h4 id="atan"><a href="#atan" class="headerlink" title="atan"></a>atan</h4><p>atan(x)，给出x的反正切值</p>
+<hr>
+<h2 id="字符型函数"><a href="#字符型函数" class="headerlink" title="字符型函数"></a>字符型函数</h2><h3 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h3><p>ascii(x)，返回字符表达式最左端字符的ASCII 码值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ascii</span>(<span class="string">&#x27;A&#x27;</span>) A,<span class="keyword">ascii</span>(<span class="string">&#x27;a&#x27;</span>) a,<span class="keyword">ascii</span>(<span class="string">&#x27; &#x27;</span>) <span class="keyword">space</span>,<span class="keyword">ascii</span>(<span class="string">&#x27;示&#x27;</span>) hz <span class="keyword">from</span> dual; </span><br></pre></td></tr></table></figure>
+
+<p>返回值：65，97，32，51902</p>
+<h3 id="CHR"><a href="#CHR" class="headerlink" title="CHR"></a>CHR</h3>
         </div>
         
             <section class="post-copyright">
@@ -284,6 +318,8 @@
             </div>
         </section>
         <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/05/21/%E6%9C%AA%E5%91%BD%E5%90%8D/">剑指offer07 重建二叉树</a>
             
             
             <a class="next" rel="next" href="/2021/05/02/How%20to%20read%20a%20paper/">How to read a paper</a>
