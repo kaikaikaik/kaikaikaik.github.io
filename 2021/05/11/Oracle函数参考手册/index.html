@@ -259,7 +259,31 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ascii</span>(<span class="string">&#x27;A&#x27;</span>) A,<span class="keyword">ascii</span>(<span class="string">&#x27;a&#x27;</span>) a,<span class="keyword">ascii</span>(<span class="string">&#x27; &#x27;</span>) <span class="keyword">space</span>,<span class="keyword">ascii</span>(<span class="string">&#x27;示&#x27;</span>) hz <span class="keyword">from</span> dual; </span><br></pre></td></tr></table></figure>
 
 <p>返回值：65，97，32，51902</p>
-<h3 id="CHR"><a href="#CHR" class="headerlink" title="CHR"></a>CHR</h3>
+<h3 id="CHR"><a href="#CHR" class="headerlink" title="CHR"></a>CHR</h3><p>chr(x)，将ASCII 码转换为字符，x为0 ~ 255</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">chr</span>(<span class="number">54740</span>) zhao,<span class="keyword">chr</span>(<span class="number">65</span>) chr65 <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：赵，A</p>
+<h3 id="CONCAT"><a href="#CONCAT" class="headerlink" title="CONCAT"></a>CONCAT</h3><p>concat(x1, x2)，连接两个字符串</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>(<span class="string">&#x27;010-&#x27;</span>,<span class="string">&#x27;88888888&#x27;</span>)||<span class="string">&#x27;转23&#x27;</span> 高乾竞电话 <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：010-88888888转23</p>
+<h3 id="INITCAP"><a href="#INITCAP" class="headerlink" title="INITCAP"></a>INITCAP</h3><p>initcap(x)，返回字符串并将字符串的第一个字母变为大写，其它字母小写; </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> initcap(<span class="string">&#x27;smith abc aBC&#x27;</span>) upp <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：Smith Abc Abc</p>
+<h3 id="LOWER"><a href="#LOWER" class="headerlink" title="LOWER"></a>LOWER</h3><p>lower(x)，将字符串全部转为小写</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">lower</span>(<span class="string">&#x27;AaBbCcDd&#x27;</span>)AaBbCcDd <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：aabbccdd</p>
+<h3 id="UPPER"><a href="#UPPER" class="headerlink" title="UPPER"></a>UPPER</h3><p>UPPER(c1) ，将字符串全部转为大写</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">upper</span>(<span class="string">&#x27;AaBbCcDd&#x27;</span>) <span class="keyword">upper</span> <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：AABBCCDD</p>
+<h3 id="NLS-INITCAP"><a href="#NLS-INITCAP" class="headerlink" title="NLS_INITCAP"></a>NLS_INITCAP</h3><p>nls_initcap(x)，返回字符串并将字符串的第一个字母变为大写，其它字母小写; </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> nls_initcap(<span class="string">&#x27;ab cde&#x27;</span>) <span class="string">&quot;test&quot;</span>, nls_initcap(<span class="string">&#x27;a c b d e&#x27;</span>,<span class="string">&#x27;nls_sort= SCHINESE_PINYIN_M&#x27;</span>) <span class="string">&quot;test1&quot;</span> <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<h3 id="NLS-UPPER"><a href="#NLS-UPPER" class="headerlink" title="NLS_UPPER"></a>NLS_UPPER</h3><p>nls_upper(x)，返回字符串并将字符串的转换为大写; </p>
+
         </div>
         
             <section class="post-copyright">
