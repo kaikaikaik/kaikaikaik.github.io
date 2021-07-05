@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kai">
+
+
+
+
+
+<title>about | Kai</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kai&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kai&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    <article class="post-wrap page">
+        
+        <h2 class="post-title">about</h2>
+        
+        <section class="post-content">
+            <h1 id="Someting-about-ME"><a href="#Someting-about-ME" class="headerlink" title="Someting about ME"></a>Someting about ME</h1><p>Hi，我是Kai，一个慢热的工科男</p>
+<p>喜欢听歌，喜欢Coding，喜欢沉浸在自己的世界里</p>
+<p>会用闲暇时间Mark一下自己的学习总结，偶尔也会分享自己的生活琐碎</p>
+<p>学业繁忙不定期更新，欢迎留言😄</p>
+<p>All over the palce was sia pence, but he looked up at the moon 🌙</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">pathInZigZagTree</span><span class="params">(<span class="keyword">int</span> label)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> level = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (Math.pow(<span class="number">2</span>, level)-<span class="number">1</span> &lt; label) &#123;</span><br><span class="line">    level++;</span><br><span class="line">  &#125;</span><br><span class="line">  LinkedList&lt;Integer&gt; result = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">  <span class="keyword">int</span> index = level % <span class="number">2</span> == <span class="number">0</span> ? (<span class="number">2</span>&lt;&lt;(level-<span class="number">1</span>))-<span class="number">1</span>-label : label-(<span class="number">2</span>&lt;&lt;(level-<span class="number">2</span>));</span><br><span class="line">  <span class="keyword">while</span> (level &gt; <span class="number">1</span>) &#123;</span><br><span class="line">    result.addFirst(label);</span><br><span class="line">    index = index&gt;&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    level--;</span><br><span class="line">    label = level % <span class="number">2</span> == <span class="number">0</span> ? (<span class="number">2</span>&lt;&lt;(level-<span class="number">1</span>))-<span class="number">1</span>-index : index+(<span class="number">2</span>&lt;&lt;(level-<span class="number">2</span>));</span><br><span class="line">  &#125;</span><br><span class="line">  result.addFirst(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+        </section>
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>Copyright © 2020 Kai. All rights reserved.</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

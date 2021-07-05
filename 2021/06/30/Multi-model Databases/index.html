@@ -12,7 +12,7 @@
 
 
 
-<title>算法设计与分析 | Kai</title>
+<title>Kai</title>
 
 
 
@@ -172,7 +172,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">算法设计与分析</h1>
+            <h1 class="post-title"></h1>
             
                 <div class="post-meta">
                     
@@ -181,30 +181,32 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">June 1, 2021&nbsp;&nbsp;22:22:10</a>
+                        Date: <a href="#">June 30, 2021&nbsp;&nbsp;23:54:54</a>
                         </span>
                     
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/Algorithm/">Algorithm</a>
-                            
-                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <h1 id="算法设计与分析"><a href="#算法设计与分析" class="headerlink" title="算法设计与分析"></a>算法设计与分析</h1><h2 id="第一章-算法导论"><a href="#第一章-算法导论" class="headerlink" title="第一章 算法导论"></a>第一章 算法导论</h2><p>概念：算法是指解决问题的方法或过程</p>
-<p>满足以下性质：</p>
-<ul>
-<li>输入 - 0个或多个外部变量作为输入</li>
-<li>输出 - 至少一个量作为输出</li>
-<li>确定性 - 组成算法的每条指令是清晰的、无歧义的</li>
-<li>有限性 - 每条指令执行的次数和时间有限</li>
-</ul>
+            <h1 id="Multi-model-Databases-A-New-Journey-to-Handle-the-Variety-of-Data"><a href="#Multi-model-Databases-A-New-Journey-to-Handle-the-Variety-of-Data" class="headerlink" title="Multi-model Databases: A New Journey to Handle the Variety of Data"></a>Multi-model Databases: A New Journey to Handle the Variety of Data</h1><p>​    这是一篇发表在顶级SCI期刊“ACM COMPUTING SURVEY”的杰出论文，论文篇幅很长，全文共38页，文章的核心词汇是“Multi-model Databases”，The author provide a general classification and multi-dimensional comparisons for the most popular multi-model databases. This comprehensive introduction on existing approaches and open problems,serving as a technical reference for developing multi-model database applications.</p>
+<p>Introduction</p>
+<p>文章首先区分了两个概念，” <strong>multi-modal databases</strong> “和” <strong>multimodel databases</strong> “</p>
+<p>作者将目前数据库的逻辑模型分为以下4种：relation，column，key/value 和document</p>
+<p>强调了定义后，文章主要的内容是介绍了当前（2019年）几种流行的multi-modal databases。分别介绍了其发展史，并根据几种指标来对提到的几种数据库做了横向的对比，其中涉及到的指标有：type：releational，column，key/valye,document<br>Supported formats：relational, key/value, JSON, XML，RDF（Resource Description Framework），document<br>Storage strategy：relational tables text or binary format + indices<br>Query language：SQL/XML or JSO extension of SQL<br>Supported formats：object, SQL or multidimensional, document (JSON, XML) API<br>Data distribution：是否支持分布式<br>Flexible schema：是否支持灵活定义表模式<br>Queries across models：是否跨模型</p>
+<p>在横向比较之后，又着重介绍了几种存储模型中典型的DBMS。<br>文章在最后提出了目前数据库系统中实现跨模型方案的局限性以及一些尚未解决的难题。</p>
+<p>这就是本片文章的脉络结构。</p>
+<p>PRELIMINARIES ON DATA MODELS</p>
+<p>在这一节中，作者对数据库中的四种数据模型进行了介绍和概括</p>
+<p>键/值模型是NoSQL数据库中最简单的数据模型。键/值模型中的每个记录都包含一个任意值和唯一的键，该键可以存储，检索或修改值。 该模型和相应操作的简单性使有效的数据处理成为可能（以不存在强大的查询语言为代价）。</p>
+<p>图形数据模型基于图形的数学定义，我们可以进一步区分两种类型的图数据库，它们对应于两种主要类型的图数据用例，并且在各自的用法上有所不同。 事务数据库使用大量较小的图形集， 相应的操作通常会搜索上标，子图或类似图形。 非交易数据库以可能具有多个组件的单个大图为目标。 相应的操作对应于搜索（最短）路径，社区（即具有特定特征的子图）等。</p>
+<p>以文件型数据库中的Cosmos DB为例。Cosmos DB本身是一种文件型数据库，但也能存储其他五种模型的数据。为了访问文档，列或键/值数据，Cosmos DB使用类似于SQL的查询语言。 每个查询都由SELECT子句和可选子句FROM，WHERE和ORDER BY组成。 子句FROM可以涉及内部联接，而我们可以通过点符号和数组中项目的位置访问JSON文档中的字段。 WHERE子句可以涉及算术，逻辑，比较，按位和字符串运算符。 为了处理图形数据，支持标准的Gremlin API。</p>
+<p>默认情况下，Cosmos DB会自动为数据库中的所有文档建立索引，并且不需要任何架构或创建二级索引。 可以通过设置索引策略来修改这些默认值，该索引策略指定到索引/从索引到索引/从索引包含/不包括文档和路径（选择文档字段），配置索引类型（哈希/范围/ spatialfornumbers / strings / points / polygons / linestrings及其所需的精度）以及配置索引更新模式（一致/惰性/无）。</p>
+<p>首先，没有一种灵活而统一的查询语言能实现跨模型的查询。虽然目前有解决方案能实现跨模型的查询，但这是对应固定的schema，如果面对一个具有灵活schema的mulit-model database，那么这种查询语言就会失效。</p>
+<p>其次，与关系数据库相反，NoSQL数据库通常使用非规范化的物理架构，这需要额外的空间。 因此，在多模型系统的世界中，我们遇到了对不同模型的矛盾要求，这需要我们为多模型方案设计提供一种新的解决方案，以平衡和权衡多模型数据的各种要求。</p>
+<p>最后要解决的问题是模型可扩展性的挑战，作者列举了以下三个范围：一是考虑模型内部的可扩展性，二是考虑模型间的可扩展性，三是我们可以提供额外的模型扩展性。</p>
+<p>数据的多样特性带来许多有挑战性的任务需要解决，以提供高效有效的数据管理。在这篇文章中，作者重点关注大数据带来的多样性挑战，这需要我们同时存储和管理不同的数据类型和格式。作者调查并分析了多模型DBMS对应于“one size ﬁts a bunch”的观点，展示了大量多模型系统。另一方面，与关系数据库相比，多模型DBMS还有很长的路要走。这篇文章的目的之一是促进科学研究和产业发展，以抓住机会并应对开发完整的多模型数据库系统所带来的挑战。</p>
 
         </div>
         
@@ -265,10 +267,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2021/06/26/Hbase/"></a>
             
-            
-            <a class="next" rel="next" href="/2021/06/01/Redis%20Notes/">Redis Notes</a>
+            <a class="next" rel="next" href="/2021/06/30/Database%20System/"></a>
             
         </section>
 
