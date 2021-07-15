@@ -12,7 +12,7 @@
 
 
 
-<title>LeetCode182 | Kai</title>
+<title>Java核心知识点 | Kai</title>
 
 
 
@@ -107,10 +107,72 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">LeetCode182</h1>
+            <h1 class="post-title">Java核心知识点</h1>
             
                 <div class="post-meta">
                     
@@ -119,68 +181,37 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">January 2, 2021&nbsp;&nbsp;10:22:20</a>
+                        Date: <a href="#">July 15, 2021&nbsp;&nbsp;22:07:14</a>
                         </span>
                     
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/LeetCode/">LeetCode</a>
-                            
-                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <blockquote>
-<p>Write a SQL query to find all duplicate emails in a table named Person.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Id</th>
-<th>Email</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><a href="mailto:&#97;&#x40;&#98;&#x2e;&#99;&#111;&#x6d;">&#97;&#x40;&#98;&#x2e;&#99;&#111;&#x6d;</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="mailto:&#x63;&#64;&#x64;&#46;&#x63;&#x6f;&#x6d;">&#x63;&#64;&#x64;&#46;&#x63;&#x6f;&#x6d;</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="mailto:&#97;&#x40;&#98;&#46;&#99;&#x6f;&#109;">&#97;&#x40;&#98;&#46;&#99;&#x6f;&#109;</a></td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>For example, your query should return the following for the above table:</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Email</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="mailto:&#97;&#64;&#98;&#x2e;&#99;&#x6f;&#109;">&#97;&#64;&#98;&#x2e;&#99;&#x6f;&#109;</a></td>
-</tr>
-</tbody></table>
-<p>Use <code>group by</code> key word：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Email <span class="keyword">from</span> Person <span class="keyword">group</span> <span class="keyword">by</span> Email <span class="keyword">having</span> <span class="keyword">count</span> (Email) &gt; <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+            <h1 id="Java核心知识点整理"><a href="#Java核心知识点整理" class="headerlink" title="Java核心知识点整理"></a>Java核心知识点整理</h1><p>夯实基础</p>
+<h2 id="Chapter-2：JVM"><a href="#Chapter-2：JVM" class="headerlink" title="Chapter 2：JVM"></a>Chapter 2：JVM</h2><p>JVM，Java Virtual Machine，Java虚拟机，是Java实现跨平台的本质原因</p>
+<p>运行于操作系统之上，与硬件没有直接交互</p>
+<p>Java源文件 –&gt; 编译器 –&gt; 字节码文件</p>
+<p>字节码文件 –&gt; JVM –&gt; 机器码</p>
+<h3 id="2-1-线程"><a href="#2-1-线程" class="headerlink" title="2.1 线程"></a>2.1 线程</h3><p>Q：线程与进程的区别？</p>
+<ol>
+<li>进程是系统进行资源分配和调度的基本单位，而线程是进程的一个实体，是CPU调度和分派的基本单位。</li>
+<li>一个程序至少有一个进程，一个进程至少包含一个线程。</li>
+<li>一个进程崩溃不会对另一个进程产生影响，而一个线程死掉等于整个进程死掉。</li>
+<li>进程拥有独立的内存单元，而多个线程共享内存。</li>
+</ol>
+<h2 id="2-2-JVM内存"><a href="#2-2-JVM内存" class="headerlink" title="2.2 JVM内存"></a>2.2 JVM内存</h2><p>![截屏2021-07-15 下午11.04.19](Java核心知识点/截屏2021-07-15 下午11.04.19-6361469.png)</p>
+<p>JVM内存主要分为：</p>
+<ol>
+<li>线程私有：程序计数器、虚拟机栈、本地方法区（与线程生命周期相同）</li>
+<li>线程共享：Java堆、方法区（随虚拟机的启动/关闭而创建/销毁）</li>
+</ol>
+<h4 id="2-2-1程序计数器（线程私有）"><a href="#2-2-1程序计数器（线程私有）" class="headerlink" title="2.2.1程序计数器（线程私有）"></a>2.2.1程序计数器（线程私有）</h4><p>当前线程所执行的字节码的行号指示器</p>
+<h4 id="2-2-2-虚拟机栈（线程私有）"><a href="#2-2-2-虚拟机栈（线程私有）" class="headerlink" title="2.2.2 虚拟机栈（线程私有）"></a>2.2.2 虚拟机栈（线程私有）</h4><p>描述Java方法执行的内存模型，存储局部变量表、操作数栈、动态链接、方法出口等信息</p>
+<p>今天先到这，去肝论文了。。。。</p>
 
-<p>The submit result:</p>
-<img src="/Users/kai/Library/Application Support/typora-user-images/image-20210102103507628.png" alt="image-20210102103507628" style="zoom:50%;" />
-
-<p>Another method, use <code>distinct</code>key word:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> a.Email <span class="keyword">from</span> Person a, Person b <span class="keyword">where</span> a.Email = b.Email <span class="keyword">and</span> a.Id != b.Id</span><br></pre></td></tr></table></figure>
-
-<img src="/Users/kai/Library/Application Support/typora-user-images/image-20210102104100270.png" alt="image-20210102104100270" style="zoom:50%;" />
         </div>
         
             <section class="post-copyright">
@@ -230,6 +261,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/Java/"># Java</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -240,10 +275,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2021/01/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/">数据库原理</a>
             
-            
-            <a class="next" rel="next" href="/2020/12/21/Linux%E4%B8%AD%E7%9A%84top%E5%91%BD%E4%BB%A4/">Linux中的top命令</a>
+            <a class="next" rel="next" href="/2021/07/14/labuladong%E7%9A%84%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%84/">labuladong的算法小抄</a>
             
         </section>
 
