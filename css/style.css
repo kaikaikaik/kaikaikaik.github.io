@@ -1068,7 +1068,7 @@ header label {
 .post-toc {
   position: fixed;
   top: 95px;
-  right: -2em;
+  right: -1em;
   width: 15rem;
   font-size: 0.75rem;
 }
