@@ -1,0 +1,7 @@
+.post-toc {
+  position: fixed;
+  top: 95px;
+  right: -1em;
+  width: 16rem;
+  font-size: 0.75rem;
+}
