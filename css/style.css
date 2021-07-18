@@ -1068,7 +1068,7 @@ header label {
 .post-toc {
   position: fixed;
   top: 95px;
-  right: 2em;
+  right: -2em;
   width: 15rem;
   font-size: 0.75rem;
 }
@@ -1362,11 +1362,4 @@ header label {
 .post-content pre .keyword,
 .post-content pre .javascript .function {
   color: #8959a8;
-}
-.post-toc {
-  position: fixed;
-  top: 95px;
-  right: -1em;
-  width: 16rem;
-  font-size: 0.75rem;
 }
