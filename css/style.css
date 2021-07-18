@@ -492,7 +492,7 @@ header label {
   justify-content: center;
   list-style: none;
   white-space: nowrap;
-  width: 100%;
+  width: 80%;
   padding-top: 2em;
 }
 .pagination a,
