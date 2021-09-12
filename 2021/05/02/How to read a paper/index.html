@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kai">
+
+
+
+
+
+<title>How to read a paper | Kai</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kai&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kai&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">How to read a paper</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kai</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">May 2, 2021&nbsp;&nbsp;15:15:12</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="👨‍🎓How-to-read-a-paper"><a href="#👨‍🎓How-to-read-a-paper" class="headerlink" title="👨‍🎓How to read a paper"></a>👨‍🎓How to read a paper</h1><p>​    文章的作者为David R. Cheriton，来自Waterloo大学。本篇文章来自我的导师王老师的推荐阅读，受众群体为刚进入科研领域的研究生。研究生群体和学术工作者每年都需要花费大量的时间去阅读论文，但却很少有人去告诉你该如何有效、高效的去阅读一篇论文，导致刚进入科研领域的研究生常常需要通过试错的方式去积累经验，需要浪费大量的精力，且在这个过程中很容易受到挫折。</p>
+<p>​    该文章的作者的核心观点是一种论文三遍阅读法，每一遍都需要达到特定的目标，并建立在前一遍的基础之上。第一遍让你对这篇论文有个大致的了解🤔，第二遍让你掌握该论文的内容😄，但不包括细节，第三遍帮你深入理解该论文🎓。</p>
+<h2 id="👆The-first-pass"><a href="#👆The-first-pass" class="headerlink" title="👆The first pass"></a>👆The first pass</h2><p>第一遍是花5-10min对文章进行快速扫描，并在脑海中建立起文章的主体架构，在这个过程中你需要判断这篇文章是否有读第二遍也就是深入了解的必要，具体步骤如下：</p>
+<ol>
+<li>仔细阅读Title、Abstract和Introduction✅</li>
+<li>阅读章节的标题、子标题，忽略其它内容✅</li>
+<li>看一眼数学内容（如果有的话），以确定其理论基础✅</li>
+<li>阅读Conclusion✅</li>
+<li>扫一眼References，在心里勾出你读过的那些文献✅</li>
+</ol>
+<p>在第一遍阅读结束之后，用如下的问题来检验你阅读的结果：</p>
+<ol>
+<li>分类：该论文属于哪种类型❓</li>
+<li>背景：它与哪些其它内容有关❓使用了哪些理论基础来分析问题❓</li>
+<li>准确性：文章提出的设想是否有效❓</li>
+<li>贡献：该论文的主要贡献是什么 ❓</li>
+<li>清晰度：该论文是否思路、结构清晰❓</li>
+</ol>
+<p>利用以上信息，你就能决定是否需要进一步的阅读。这样可以帮助你筛选出那些和你领域不相关的，或者提出无用无效idea的论文。</p>
+<p>​    基于以上观点，我们可以换位思考一下。当我们自己在进行Paper Drafting的时候，我们可以假想一下审稿人（或是读者）也用这种方式对我们的论文进行第一遍的阅读审查，那么我们就必须做到章节和子章节的标题清晰连贯、摘要简明而全面。如果审稿人在第一遍读完论文后还不能理解要点所在，那么你的投稿很大概率会被拒绝。同样的，如果读者在5分钟的阅读后还不能理解论文的主旨，那么你的论文也不会被引用。作者建议我们可以用一张精心挑选制作的图片来对文章摘要进行一个很好的总结，这样的方法在科学期刊中也越来越常见。</p>
+<h2 id="✌️The-second-pass"><a href="#✌️The-second-pass" class="headerlink" title="✌️The second pass"></a>✌️The second pass</h2><p>​    第二遍需要进行细致的阅读，但是忽略诸如证明之类的细节。在阅读的过程中写下论文的关键点，必要时在论文空白处作评论，作者建议写下你所不理解的术语或者你想问作者的一些问题。</p>
+<ol>
+<li>仔细阅读论文中的图、表及其它插图。轴的标记是否合理❓结果是否正确且具有统计意义❓这些也是论文是否优秀的重要评判标准。</li>
+<li>标注出你未阅读过的参考文献❕这也是了解论文背景的一个好方法。</li>
+</ol>
+<p>对于一个有经验的读者来说，第二遍应该花上大约一个小时的时间。在这之后，你应该能够掌握论文的内容，并且能够向别人总结出论文的主旨，包括提供支持性证据，这种详细程度仅适用于你感兴趣的论文。有时即使在第二遍阅读之后，由于文章涉及的领域较新、专业术语或缩略词较多以及包含你所不理解的证明方法或新兴技术，你还是不能全面的理解这篇论文，那么这时候就需要我们进行第三遍的阅读。</p>
+<h2 id="🤘The-third-pass"><a href="#🤘The-third-pass" class="headerlink" title="🤘The third pass"></a>🤘The third pass</h2><p>​    要完全理解一篇论文 ，那么就需要第三遍的阅读。第三遍阅读的关键是尝试进行复现，也就是说，在与作者相同假设下重建论文中的工作。通过比较这种再创造与实践的论文，你可以很容易的发现这篇文章的创新点，并且可以找出它隐藏的失败与假设。大致要点如下：</p>
+<ol>
+<li>找出并挑战作者的每一陈述中的假设和观点✅</li>
+<li>思考如果是你，你会如何来陈述这样特定的想法✅</li>
+<li>记下对未来工作的想法✅</li>
+</ol>
+<p>这一遍对于有经验的人来说也需要花上一两个小时的时间，在这一遍结束后你应该能够根据记忆来重建整个文章的结构，并且能够确定文章的优缺点、隐含的假设、缺少的相关工作，以及实验或分析技术潜在的问题。</p>
+<h2 id="🙋‍♂️文献调查"><a href="#🙋‍♂️文献调查" class="headerlink" title="🙋‍♂️文献调查"></a>🙋‍♂️文献调查</h2><p>​    当你在进行文献调查时，需要阅读数十篇论文，并且可能是某个你所不熟悉的领域。那么我们该怎么做呢？作者为我们提供了一种三段式法则：</p>
+<ol>
+<li>第一步，利用Google Scholar等学术引擎查找关键字，找到该领域内三到五篇高引用频率的论文。对每篇论文进行第一遍的阅读，并阅读其相关工作。这样一来你就能勾勒出一幅该领域近期工作的缩略图，运气好的话还能找到一份Survey Paper。</li>
+<li>第二步，找出这些paper里共同引用的文章和作者，通常这些都是该领域的关键论文和研究学者。下载这些论文并进入相关研究人员的网站，看看他们最近都在哪里发布文章，这将帮你找到该领域的顶会文章。</li>
+<li>第三步，进入顶会期刊的网站，查看它们最近的会议记录。快速扫描并找出其近期高质量的相关工作论文，这些论文，连同你之前的相关论文，对它们进行二遍阅读。如果它们都引用了你之前没有发现的关键论文，就去找到并阅读它，以此往复。</li>
+</ol>
+<h2 id="💾其它参考资料"><a href="#💾其它参考资料" class="headerlink" title="💾其它参考资料"></a>💾其它参考资料</h2><ul>
+<li>T. Roscoe,  <a target="_blank" rel="noopener" href="http://people.inf.ethz.ch/troscoe/pubs/review-writing.pdf">Writing Reviews for Systems Conferences</a></li>
+<li>H. Schulzrinne, <a target="_blank" rel="noopener" href="http://www.cs.columbia.edu/%E2%88%BChgs/etc/writing-style.html">Writing Technical Articles</a> </li>
+<li>G.M. Whitesides, <a target="_blank" rel="noopener" href="http://www.ee.ucr.edu/%E2%88%BCrlake/Whitesides_writing_res_paper.pdf">Whitesides’ Group: Writing a Paper</a></li>
+<li>I.H. McLean, <a target="_blank" rel="noopener" href="http://psychologyinc.blogspot.com/">Literature Review Matrix</a> </li>
+</ul>
+
+        </div>
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kai</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+		
+			<section id="comments" class="comments">
+			  <style>
+				.comments{margin:30px;padding:10px;background:#fff}
+				@media screen and (max-width:1000px){.comments{margin:auto;padding:10px;background:#fff}}
+			  </style>
+			  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+      el: '.valine_comment',
+      app_id: '0WvNq11JMneyKNonNFmIAmgL-gzGzoHsz',
+      app_key: 'cLBUVXzqIIqEHsV68ThcTXQn',
+      placeholder: 'Your comment here...',
+      notify: 'true',
+      verify: 'true',
+    });
+</script>
+			</section>
+		
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/05/11/Oracle%E5%87%BD%E6%95%B0%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C/">Oracle函数参考手册</a>
+            
+            
+            <a class="next" rel="next" href="/2021/02/05/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A8%B3%E5%AE%9A%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BDRedis%E9%9B%86%E7%BE%A4/">如何构建稳定的高性能Redis集群</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>Copyright © 2020 Kai. All rights reserved.</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

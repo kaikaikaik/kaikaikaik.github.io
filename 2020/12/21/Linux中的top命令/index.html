@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kai">
+
+
+
+
+
+<title>Linux中的top命令 | Kai</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kai&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kai&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Linux中的top命令</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kai</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">December 21, 2020&nbsp;&nbsp;14:51:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>![image-20201221145225180](/Users/kai/Library/Application Support/typora-user-images/image-20201221145225180.png)</p>
+<p>第一行:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top - 14:52:59 up 39 days,  1:18,  1 user,  load average: 0.00, 0.01, 0.05</span><br></pre></td></tr></table></figure>
+
+<p>依次对应：<code>系统当前时间 </code>  up  <code>系统运行时间</code> ， <code>当前登陆用户数量</code> ，load average: 距离现在<code>1min</code>，<code>5min</code>，<code>15min</code>负载情况；注意：load average数据是每隔5秒钟检查一次活跃的进程数，然后按特定算法计算出的数值。如果这个数除以逻辑CPU的数量，结果<code>高于5</code>的时候就表明系统在超负荷运转了。</p>
+<p>这行信息与uptime显示信息相同：</p>
+<p>![image-20201221150542960](/Users/kai/Library/Application Support/typora-user-images/image-20201221150542960.png) </p>
+<p>第二行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tasks: 240 total,   2 running, 238 sleeping,   0 stopped,   0 zombie</span><br></pre></td></tr></table></figure>
+
+<p>Tasks：<code>任务（进程）数量</code>，<code>正在运行中</code>，<code>休眠（挂起）</code>，<code>停止状态</code>，<code>僵尸状态</code></p>
+<p>第三行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash">Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st</span></span><br></pre></td></tr></table></figure>
+
+<p>依次对应：<br>us: user 用户空间占用cpu的百分比<br>sy: system内核空间占用cpu的百分比<br>ni: niced改变过优先级的进程占用cpu的百分比<br>id: 空闲cpu百分比<br>wa: IO wait IO等待占用cpu的百分比<br>hi: Hardware IRQ 硬中断 占用cpu的百分比<br>si: software 软中断 占用cpu的百分比<br>st: 被hypervisor偷去的时间</p>
+<p>第四行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KiB Mem :  3882624 total,   270544 free,   630264 used,  2981816 buff/cache</span><br></pre></td></tr></table></figure>
+
+<p>依次对应：Total：物理内存总量（3.7G) ，Free：空闲内存总量（2.5G)，Used：使用中的内存总量（2.4G)，Buff/Cache：缓冲内存量<br>第四行中使用中的内存总量（used）指的是现在系统内核控制的内存数，空闲内存总量（free）是内核还未纳入其管控范围的数量。纳入内核管理的内存不见得都在使用中，还包括过去使用过的现在可以被重复利用的内存，内核并不把这些可被重新使用的内存交还到free中去，因此在linux上free内存会越来越少。</p>
+<p>第五行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KiB Swap:  1048572 total,  1042616 free,     5956 used.  2771852 avail Mem</span><br></pre></td></tr></table></figure>
+
+<p>参数同上，对应交换区信息</p>
+<p>第六行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAN</span><br></pre></td></tr></table></figure>
+
+<p>依次对应：<br>PID — 进程id<br>USER — 进程所有者<br>PR — 进程优先级<br>NI — nice值。负值表示高优先级，正值表示低优先级<br>VIRT — 进程使用的虚拟内存总量，单位kb。VIRT=SWAP+RES<br>RES — 进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA<br>SHR — 共享内存大小，单位kb<br>S — 进程状态。D=不可中断的睡眠状态 R=运行 S=睡眠 T=跟踪/停止 Z=僵尸进程<br>%CPU — 上次更新到现在的CPU时间占用百分比<br>%MEM — 进程使用的物理内存百分比<br>TIME+ — 进程使用的CPU时间总计，单位1/100秒<br>COMMAND — 进程名称（命令名/命令行）</p>
+<p>一些交互命令：</p>
+<p>‘h’ 帮助 — top命令进入视图后，键入h会显示如下界面，显示交互命令的帮助菜单</p>
+<p>enter/space — 刷新</p>
+<p>A — 切换交替显示模式；Def （默认字段组），Job （任务字段组），Mem （内存字段组），Usr （用户字段组）</p>
+
+        </div>
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kai</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+		
+			<section id="comments" class="comments">
+			  <style>
+				.comments{margin:30px;padding:10px;background:#fff}
+				@media screen and (max-width:1000px){.comments{margin:auto;padding:10px;background:#fff}}
+			  </style>
+			  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+      el: '.valine_comment',
+      app_id: '0WvNq11JMneyKNonNFmIAmgL-gzGzoHsz',
+      app_key: 'cLBUVXzqIIqEHsV68ThcTXQn',
+      placeholder: 'Your comment here...',
+      notify: 'true',
+      verify: 'true',
+    });
+</script>
+			</section>
+		
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/01/02/LeetCode182/">LeetCode182</a>
+            
+            
+            <a class="next" rel="next" href="/2020/12/16/LeetCode345/">LeetCode345</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>Copyright © 2020 Kai. All rights reserved.</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

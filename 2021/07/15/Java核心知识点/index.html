@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kai">
+
+
+
+
+
+<title>Java核心知识点 | Kai</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kai&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kai&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Java核心知识点</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kai</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">July 15, 2021&nbsp;&nbsp;22:07:14</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Java核心知识点整理"><a href="#Java核心知识点整理" class="headerlink" title="Java核心知识点整理"></a>Java核心知识点整理</h1><p>夯实基础</p>
+<h2 id="Chapter-2：JVM"><a href="#Chapter-2：JVM" class="headerlink" title="Chapter 2：JVM"></a>Chapter 2：JVM</h2><p>JVM，Java Virtual Machine，Java虚拟机，是Java实现跨平台的本质原因</p>
+<p>运行于操作系统之上，与硬件没有直接交互</p>
+<p>Java源文件 –&gt; 编译器 –&gt; 字节码文件</p>
+<p>字节码文件 –&gt; JVM –&gt; 机器码</p>
+<h3 id="2-1-线程"><a href="#2-1-线程" class="headerlink" title="2.1 线程"></a>2.1 线程</h3><p>Q：线程与进程的区别？</p>
+<ol>
+<li>进程是系统进行资源分配和调度的基本单位，而线程是进程的一个实体，是CPU调度和分派的基本单位。</li>
+<li>一个程序至少有一个进程，一个进程至少包含一个线程。</li>
+<li>一个进程崩溃不会对另一个进程产生影响，而一个线程死掉等于整个进程死掉。</li>
+<li>进程拥有独立的内存单元，而多个线程共享内存。</li>
+</ol>
+<h3 id="2-2-JVM内存"><a href="#2-2-JVM内存" class="headerlink" title="2.2 JVM内存"></a>2.2 JVM内存</h3><img src="/2021/07/15/Java%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%82%B9/JVM.png" class="" title="JVM">
+
+<p>JVM内存主要分为：</p>
+<ol>
+<li>线程私有：程序计数器、虚拟机栈、本地方法区（与线程生命周期相同）</li>
+<li>线程共享：Java堆、方法区（随虚拟机的启动/关闭而创建/销毁）</li>
+</ol>
+<h4 id="2-2-1程序计数器（线程私有）"><a href="#2-2-1程序计数器（线程私有）" class="headerlink" title="2.2.1程序计数器（线程私有）"></a>2.2.1程序计数器（线程私有）</h4><p>当前线程所执行的字节码的行号指示器</p>
+<h4 id="2-2-2-虚拟机栈（线程私有）"><a href="#2-2-2-虚拟机栈（线程私有）" class="headerlink" title="2.2.2 虚拟机栈（线程私有）"></a>2.2.2 虚拟机栈（线程私有）</h4><p>描述Java方法执行的内存模型，存储局部变量表、操作数栈、动态链接、方法出口等信息</p>
+<p>今天先到这，去肝论文了。。。。</p>
+
+        </div>
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kai</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+		
+			<section id="comments" class="comments">
+			  <style>
+				.comments{margin:30px;padding:10px;background:#fff}
+				@media screen and (max-width:1000px){.comments{margin:auto;padding:10px;background:#fff}}
+			  </style>
+			  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+      el: '.valine_comment',
+      app_id: '0WvNq11JMneyKNonNFmIAmgL-gzGzoHsz',
+      app_key: 'cLBUVXzqIIqEHsV68ThcTXQn',
+      placeholder: 'Your comment here...',
+      notify: 'true',
+      verify: 'true',
+    });
+</script>
+			</section>
+		
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Java/"># Java</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/08/14/%E8%8A%B1%E6%97%97%E9%87%91%E8%9E%8D%E9%9D%A2%E7%BB%8F/">花旗金融面经</a>
+            
+            
+            <a class="next" rel="next" href="/2021/07/14/labuladong%E7%9A%84%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%84/">labuladong的算法小抄</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>Copyright © 2020 Kai. All rights reserved.</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

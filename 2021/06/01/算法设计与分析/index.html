@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kai">
+
+
+
+
+
+<title>算法设计与分析(期末复习) | Kai</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kai&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kai&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">算法设计与分析(期末复习)</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kai</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">June 1, 2021&nbsp;&nbsp;22:22:10</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Algorithm/">Algorithm</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="算法设计与分析"><a href="#算法设计与分析" class="headerlink" title="算法设计与分析"></a>算法设计与分析</h1><h2 id="第一章-算法引论"><a href="#第一章-算法引论" class="headerlink" title="第一章 算法引论"></a>第一章 算法引论</h2><p>概念：算法是指解决问题的方法或过程</p>
+<p>满足以下性质：</p>
+<ul>
+<li>输入 - 0个或多个外部变量作为输入</li>
+<li>输出 - 至少一个量作为输出</li>
+<li>确定性 - 组成算法的每条指令是清晰的、无歧义的</li>
+<li>有限性 - 每条指令执行的次数和时间有限</li>
+</ul>
+<p>时间复杂度与空间复杂度</p>
+<ul>
+<li>算法复杂性是算法运行所需要的计算机资源的量，需要的时间资源的量称为<strong>时间复杂性</strong>，需要的空间资源的量称为<strong>空间复杂性</strong></li>
+</ul>
+<h2 id="第二章-递归与分治策略"><a href="#第二章-递归与分治策略" class="headerlink" title="第二章 递归与分治策略"></a>第二章 递归与分治策略</h2><h3 id="分治法概念"><a href="#分治法概念" class="headerlink" title="分治法概念"></a>分治法概念</h3><p>分治法的设计思想是，将一个难以直接解决的大问题，分割T成一些规模较小的相同问题，以便各个击破，分而治之。</p>
+<p>凡治众如治寡，分数是也。 —孙子兵法</p>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>概念：</p>
+<blockquote>
+<p>直接或间接地调用自身的算法称为递归算法。用函数自身给出定义的函数称为递归函数。</p>
+</blockquote>
+<p>递归的两个要素：</p>
+<ul>
+<li>递归的边界条件：即停止递归的条件</li>
+<li>递归定义：使问题向边界条件转化的规则</li>
+</ul>
+<h3 id="递归与分治de联系"><a href="#递归与分治de联系" class="headerlink" title="递归与分治de联系"></a>递归与分治de联系</h3><ul>
+<li>分治产生的子问题为递归的使用提供了条件</li>
+<li>分治方法导致了递归的产生</li>
+<li>经常同时出现，产生许多高效算法</li>
+</ul>
+<h3 id="递归常见应用"><a href="#递归常见应用" class="headerlink" title="递归常见应用"></a>递归常见应用</h3><p>（1）阶乘函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">fac</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">1</span>) &#123;</span><br><span class="line">  	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> n*fac(n-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>（2）Fibonacci数列：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">return</span> fibonacci(n-<span class="number">1</span>)+fibonacci(n-<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（3）Ackerman函数（双递归，且无非递归定义）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">ackerman</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">1</span> &amp;&amp; m == <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  	<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">0</span> &amp;&amp; m &gt;= <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span> (n &gt;= <span class="number">2</span> &amp;&amp; m == <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  	<span class="keyword">return</span> n + <span class="number">2</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  	<span class="keyword">return</span> ackerman(ackerman(n-<span class="number">1</span>, m), m-<span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（4）排序问题</p>
+<p>使用递归进行全排序</p>
+<p>（5）整数划分问题</p>
+<p>将正整数n表示成一系列正整数之和</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">1</span>||m==<span class="number">1</span>)&#123;	<span class="comment">//n为1时和m为1时只有一种划分方法,也是回归条件</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(n&gt;m)&#123;	<span class="comment">//n大于m时有两类方法，一类是使用m，一类是不使用m进行划分</span></span><br><span class="line">			<span class="keyword">return</span> f(n-m,m)+f(n,m-<span class="number">1</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(n&lt;m)&#123;	<span class="comment">//用来划分的m过大时，就是用n为最大值来划分n自己</span></span><br><span class="line">			<span class="keyword">return</span> f(n,n);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;		<span class="comment">//n==m时，也是两类划分，可用m也可不用m,用m时就只有一种划分</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>+f(n,n-<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（6）Hanoi塔问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &gt; <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		hanoi(n-<span class="number">1</span>,a,c,b);</span><br><span class="line">		move(n,a,b);</span><br><span class="line">		hanoi(n-<span class="number">1</span>,c,b,a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>递归总结：</p>
+<blockquote>
+<p>优点：结构清晰，可读性强，易于使用数学归纳法证明其正确性</p>
+<p>缺点：运行效率较低，时间复杂度和空间复杂度均高于非递归</p>
+<p>适用条件：1.数据的定义形式符合递归定义；2.数据间的关系（数据结构）符合递归定义（如树的遍历、图的搜索等）；3.问题解法符合递归算法的实现（如回溯法等）</p>
+</blockquote>
+<h3 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h3><p>适用条件：</p>
+<ol>
+<li>该问题的规模缩小到一定的程度就可以容易地解决；</li>
+<li>该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质；</li>
+<li>利用该问题分解出的子问题的解可以合并为该问题的解；</li>
+<li>该问题所分解出的各个子问题是相互独立的，即子问 题之间不包含公共的子问题。</li>
+</ol>
+<p><strong>基本步骤（！重要考点）：</strong> </p>
+<ol>
+<li><strong>分解</strong>：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题；</li>
+<li><strong>解决</strong>：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题； </li>
+<li><strong>合并</strong>：将各个子问题的解合并为原问题的解。</li>
+</ol>
+<h2 id="几种常见的排序方法"><a href="#几种常见的排序方法" class="headerlink" title="几种常见的排序方法"></a>几种常见的排序方法</h2><p>这里主要介绍插入排序、归并排序、堆排序、快速排序四种。</p>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p><strong>特点：</strong></p>
+<ol>
+<li>稳定;</li>
+<li>最坏情况下比较n*(n-1)/2次，最好情况下比较n-1次;</li>
+<li>第k次排序后，前k个元素已经是从小到大排好序的</li>
+<li>空间复杂度O(1)</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] insertSort(<span class="keyword">int</span>[] arr)&#123;</span><br><span class="line">  <span class="comment">//判断是否为空</span></span><br><span class="line">  <span class="keyword">if</span>(arr == <span class="keyword">null</span> || arr.length == <span class="number">0</span>)&#123;</span><br><span class="line">  	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//开始排序</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i] &lt; arr[i - <span class="number">1</span>])&#123;</span><br><span class="line">      <span class="comment">//临时变量保存当前值</span></span><br><span class="line">      <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">      <span class="comment">//定义一个指针将前面部分后挪</span></span><br><span class="line">      <span class="keyword">int</span> j = i;</span><br><span class="line">      <span class="keyword">while</span>(j &gt; <span class="number">0</span> &amp;&amp; arr[j - <span class="number">1</span>] &gt; temp)&#123;</span><br><span class="line">        arr[j] = arr[j - <span class="number">1</span>];</span><br><span class="line">        j--;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//插入</span></span><br><span class="line">      arr[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p><strong>原理</strong><br>归并排序是用分治思想,将待排序元素分成大小大致相同的2个子集合，分别对2个子集合进行排序，最终将排好序的子集合进行合并。<br><strong>特点</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(Comparable a[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (left&lt;right) &#123;<span class="comment">//至少有2个元素</span></span><br><span class="line">    <span class="keyword">int</span> i=(left+right)/<span class="number">2</span>; <span class="comment">//取中点</span></span><br><span class="line">    mergeSort(a, left, i);</span><br><span class="line">    mergeSort(a, i+<span class="number">1</span>, right);</span><br><span class="line">    merge(a, b, left, i, right); <span class="comment">//合并到数组b</span></span><br><span class="line">    copy(a, b, left, right); <span class="comment">//复制回数组a</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(nlogn)</p>
+<p>空间复杂度：O(n)</p>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序的性能取决于划分的对称性，这种算法是不稳定。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> low, <span class="keyword">int</span> hight)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i, j, index;</span><br><span class="line">        <span class="keyword">if</span> (low &gt; hight) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        i = low;</span><br><span class="line">        j = hight;</span><br><span class="line">        index = a[i]; <span class="comment">// 用子表的第一个记录做基准</span></span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123; <span class="comment">// 从表的两端交替向中间扫描</span></span><br><span class="line">            <span class="keyword">while</span> (i &lt; j &amp;&amp; a[j] &gt;= index)</span><br><span class="line">                j--;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; j)</span><br><span class="line">                a[i++] = a[j];<span class="comment">// 用比基准小的记录替换低位记录</span></span><br><span class="line">            <span class="keyword">while</span> (i &lt; j &amp;&amp; a[i] &lt; index)</span><br><span class="line">                i++;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; j) <span class="comment">// 用比基准大的记录替换高位记录</span></span><br><span class="line">                a[j--] = a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        a[i] = index;<span class="comment">// 将基准数值替换回 a[i]</span></span><br><span class="line">        sort(a, low, i - <span class="number">1</span>); <span class="comment">// 对低子表进行递归排序</span></span><br><span class="line">        sort(a, i + <span class="number">1</span>, hight); <span class="comment">// 对高子表进行递归排序</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</span><br><span class="line">        sort(a, <span class="number">0</span>, a.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[] = &#123;<span class="number">49</span>, <span class="number">38</span>, <span class="number">65</span>, <span class="number">97</span>, <span class="number">76</span>, <span class="number">13</span>, <span class="number">27</span>, <span class="number">49</span>&#125;;</span><br><span class="line">        quickSort(a);</span><br><span class="line">        System.out.println(Arrays.toString(a));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p><strong>动态规划的基本步骤：</strong></p>
+<ol>
+<li>查找最优解，刻画结构特征</li>
+<li>递归定义最优值</li>
+<li>自底向上求解最优值</li>
+<li>根据最优值构建最优解</li>
+</ol>
+
+        </div>
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kai</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+		
+			<section id="comments" class="comments">
+			  <style>
+				.comments{margin:30px;padding:10px;background:#fff}
+				@media screen and (max-width:1000px){.comments{margin:auto;padding:10px;background:#fff}}
+			  </style>
+			  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+      el: '.valine_comment',
+      app_id: '0WvNq11JMneyKNonNFmIAmgL-gzGzoHsz',
+      app_key: 'cLBUVXzqIIqEHsV68ThcTXQn',
+      placeholder: 'Your comment here...',
+      notify: 'true',
+      verify: 'true',
+    });
+</script>
+			</section>
+		
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/07/14/labuladong%E7%9A%84%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%84/">labuladong的算法小抄</a>
+            
+            
+            <a class="next" rel="next" href="/2021/06/01/Redis%20Notes/">Redis Notes</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>Copyright © 2020 Kai. All rights reserved.</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

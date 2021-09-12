@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kai">
+
+
+
+
+
+<title>LeetCode182 | Kai</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kai&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kai&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">LeetCode182</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kai</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">January 2, 2021&nbsp;&nbsp;10:22:20</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/LeetCode/">LeetCode</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>Write a SQL query to find all duplicate emails in a table named Person.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="mailto:&#97;&#x40;&#x62;&#46;&#x63;&#111;&#x6d;">&#97;&#x40;&#x62;&#46;&#x63;&#111;&#x6d;</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="mailto:&#99;&#64;&#100;&#46;&#x63;&#x6f;&#109;">&#99;&#64;&#100;&#46;&#x63;&#x6f;&#109;</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="mailto:&#x61;&#64;&#98;&#x2e;&#x63;&#111;&#x6d;">&#x61;&#64;&#98;&#x2e;&#x63;&#111;&#x6d;</a></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>For example, your query should return the following for the above table:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Email</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="mailto:&#x61;&#x40;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x61;&#x40;&#98;&#x2e;&#99;&#x6f;&#x6d;</a></td>
+</tr>
+</tbody></table>
+<p>Use <code>group by</code> key word：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Email <span class="keyword">from</span> Person <span class="keyword">group</span> <span class="keyword">by</span> Email <span class="keyword">having</span> <span class="keyword">count</span> (Email) &gt; <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>The submit result:</p>
+<img src="/Users/kai/Library/Application Support/typora-user-images/image-20210102103507628.png" alt="image-20210102103507628" style="zoom:50%;" />
+
+<p>Another method, use <code>distinct</code>key word:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> a.Email <span class="keyword">from</span> Person a, Person b <span class="keyword">where</span> a.Email = b.Email <span class="keyword">and</span> a.Id != b.Id</span><br></pre></td></tr></table></figure>
+
+<img src="/Users/kai/Library/Application Support/typora-user-images/image-20210102104100270.png" alt="image-20210102104100270" style="zoom:50%;" />
+        </div>
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kai</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+		
+			<section id="comments" class="comments">
+			  <style>
+				.comments{margin:30px;padding:10px;background:#fff}
+				@media screen and (max-width:1000px){.comments{margin:auto;padding:10px;background:#fff}}
+			  </style>
+			  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+      el: '.valine_comment',
+      app_id: '0WvNq11JMneyKNonNFmIAmgL-gzGzoHsz',
+      app_key: 'cLBUVXzqIIqEHsV68ThcTXQn',
+      placeholder: 'Your comment here...',
+      notify: 'true',
+      verify: 'true',
+    });
+</script>
+			</section>
+		
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/01/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/">数据库原理</a>
+            
+            
+            <a class="next" rel="next" href="/2020/12/21/Linux%E4%B8%AD%E7%9A%84top%E5%91%BD%E4%BB%A4/">Linux中的top命令</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>Copyright © 2020 Kai. All rights reserved.</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

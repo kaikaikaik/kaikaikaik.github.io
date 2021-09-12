@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kai">
+
+
+
+
+
+<title>花旗金融面经 | Kai</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kai&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kai&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">花旗金融面经</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kai</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 14, 2021&nbsp;&nbsp;0:08:08</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Citi-花旗金融-面经"><a href="#Citi-花旗金融-面经" class="headerlink" title="Citi 花旗金融 面经"></a>Citi 花旗金融 面经</h1><p>一面HR面（8月3号），纯聊天，考察沟通能力，了解背景情况（包括换工作原因、当前薪资及期望薪资等），介绍下公司目前发展状况及团队情况，排下一次面试时间；</p>
+<p>二面Panel Interview（8月5号），技术群面，由多个组来面，轮流提问，只要有组pick你就可以进入下一轮面试，提问如下：</p>
+<ol>
+<li>Self Introduction in English</li>
+<li>Why change job ?</li>
+<li>Introduce your project ?</li>
+<li>Summary your daily work in English ?</li>
+<li>Do you have English environment in your work ？</li>
+<li>索引失效的情况有哪些 ？</li>
+<li>Oracle场景题，如何查询数据库中每个人每天第一次打卡的时间？</li>
+<li>HashMap中put与get的过程？</li>
+<li>Java中HashMap的遍历方式 ？是否可以用for each进行遍历？</li>
+<li>两个list如何查找交集元素 ？</li>
+<li>如何理解AOP？它和OOP的区别是什么 ？</li>
+<li>工作中常用的Linux命令有哪些 ？</li>
+<li>SoringBoot中你常用的注解有哪些 ？</li>
+<li>SpringBoot中Bean注入的方式有哪几种 ？</li>
+</ol>
+<p>后面还有一些不太记得了，大概聊了40多分钟，后面问的基本都没咋答上来，回答不太好。HR反馈面试官觉得基础薄弱了些，但是有一个合规组英语给了4.5分，技术分给了中等，愿意进行下一轮面试。</p>
+<p>三面Team Leader面（8月9号），主要是聊天，技术不再深入，介绍组内情况，项目技术体系，聊聊职业规划，大概20来分钟，问了提离职之后大概多久能入职，然后结束三面。HR反馈Team Leader面通过，进入下一轮，GFT部门总监面。</p>
+<p>四面Final Interview（8月11日），GFT部门总监面，特地请了半天假在家。并不是想象中的聊聊天，而是技术面，他会根据你的水平来定Junior还是Senior，或是被挂掉。主要问题都是围绕你的回答来进行提问，由浅入深，由表及里：</p>
+<ol>
+<li>int的取值范围？</li>
+<li>Linux与Unix的区别？</li>
+<li>HashCode工作中用到了哪些地方？能否重写equals不重写hashcode，为什么？</li>
+<li>ArrayList与LinkList的区别？ArrayList为什么需要连续的存储空间？</li>
+<li>双向链表跟单向链表相比的优劣点？</li>
+<li>用英语介绍一下你的上一份工作？</li>
+</ol>
+<p>当天告知面试通过，沟通完薪资待遇开始走背调流程。背调过程非常长，一共分3轮，一轮背调后发offer，入职后开始二轮和三轮背调。8月12日填完背调资料，开始等待，期间也填了各种授权文件之类的。8月30号告知背调通过，确定Onboard day，开始制作offer。9月2日offer发到邮箱，没问题就接了。整体来说，面试流程很快，反馈很及时，就是背调流程长了点，而且没有进度反馈，所以等的比较着急，需要点耐心，HR很很好很nice。</p>
+
+        </div>
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kai</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+		
+			<section id="comments" class="comments">
+			  <style>
+				.comments{margin:30px;padding:10px;background:#fff}
+				@media screen and (max-width:1000px){.comments{margin:auto;padding:10px;background:#fff}}
+			  </style>
+			  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+      el: '.valine_comment',
+      app_id: '0WvNq11JMneyKNonNFmIAmgL-gzGzoHsz',
+      app_key: 'cLBUVXzqIIqEHsV68ThcTXQn',
+      placeholder: 'Your comment here...',
+      notify: 'true',
+      verify: 'true',
+    });
+</script>
+			</section>
+		
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2021/07/15/Java%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%82%B9/">Java核心知识点</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>Copyright © 2020 Kai. All rights reserved.</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

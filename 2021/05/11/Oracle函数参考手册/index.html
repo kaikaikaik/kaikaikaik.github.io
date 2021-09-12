@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kai">
+
+
+
+
+
+<title>Oracle函数参考手册 | Kai</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kai&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kai&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/categories">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Oracle函数参考手册</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kai</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">May 11, 2021&nbsp;&nbsp;23:37:03</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Oracle函数参考手册"><a href="#Oracle函数参考手册" class="headerlink" title="Oracle函数参考手册"></a>Oracle函数参考手册</h1><h2 id="数值型函数"><a href="#数值型函数" class="headerlink" title="数值型函数"></a>数值型函数</h2><h3 id="ABS"><a href="#ABS" class="headerlink" title="ABS"></a>ABS</h3><p>ABS(x)，返回x的绝对值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">abs</span>(<span class="number">100</span>), <span class="keyword">abs</span>(<span class="number">-100</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<h3 id="SIGN"><a href="#SIGN" class="headerlink" title="SIGN"></a>SIGN</h3><p>sign(x)，返回x的正负值，正为1，负为-1，0返回0</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sign</span>(<span class="number">100</span>), <span class="keyword">sign</span>(<span class="number">-100</span>), <span class="keyword">sign</span>(<span class="number">0</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CEIL"><a href="#CEIL" class="headerlink" title="CEIL"></a>CEIL</h3><p>ceil(x)，返回大于等于x的最小整数值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ceil</span>(<span class="number">3.1</span>), <span class="keyword">ceil</span>(<span class="number">2.8</span>+<span class="number">1.3</span>), <span class="keyword">ceil</span>(<span class="number">0</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：4，5，0</p>
+<h3 id="FLOOR"><a href="#FLOOR" class="headerlink" title="FLOOR"></a>FLOOR</h3><p>floor(x)，返回小于等于x的最大整数值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">floor</span>(<span class="number">3.1</span>), <span class="keyword">floor</span>(<span class="number">2.8</span>+<span class="number">1.3</span>),<span class="keyword">floor</span>(<span class="number">0</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：3，4，0</p>
+<h3 id="POWER"><a href="#POWER" class="headerlink" title="POWER"></a>POWER</h3><p>power(x, y)，返回x的y次幂</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">power</span>(<span class="number">2.5</span>,<span class="number">2</span>),<span class="keyword">power</span>(<span class="number">1.5</span>,<span class="number">0</span>),<span class="keyword">power</span>(<span class="number">20</span>,<span class="number">-1</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：6.25，1，0.05</p>
+<h3 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h3><p>exp(y)，返回e的y次幂（e为数学中的常量）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">exp</span>(<span class="number">3</span>),<span class="keyword">exp</span>(<span class="number">0</span>),<span class="keyword">exp</span>(<span class="number">-3</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：20.0855369，1，0.049787068</p>
+<h3 id="LOG"><a href="#LOG" class="headerlink" title="LOG"></a>LOG</h3><p>log(x, y)，返回以x为底的y的对数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">log</span>(<span class="number">4</span>,<span class="number">2</span>), <span class="keyword">log</span>(<span class="number">4</span>,<span class="number">16</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：2，2</p>
+<h3 id="LN"><a href="#LN" class="headerlink" title="LN"></a>LN</h3><p>ln(y)，返回以e为底的y的对数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ln</span>(<span class="number">20</span>), <span class="keyword">ln</span>(<span class="number">1</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：2.99，0</p>
+<h3 id="MOD"><a href="#MOD" class="headerlink" title="MOD"></a>MOD</h3><p>mod(x,y)，返回x除以y的余数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">mod</span>(<span class="number">23</span>,<span class="number">8</span>), <span class="keyword">mod</span>(<span class="number">24</span>,<span class="number">8</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：7，0</p>
+<h3 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h3><p>round(x, y)，返回四舍五入后的值；y不为整数则截取y整数部分，y&gt;0则四舍五入为y位小数，y&lt;0则四舍五入到小数点向左第y位。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">round</span>(<span class="number">5555.6666</span>,<span class="number">2.1</span>),<span class="keyword">round</span>(<span class="number">5555.6666</span>,<span class="number">-2.6</span>),<span class="keyword">round</span>(<span class="number">5555.6666</span>) <span class="keyword">from</span> dual; </span><br></pre></td></tr></table></figure>
+
+<p>返回值：5555.67，5600，5556</p>
+<h3 id="TRUNC"><a href="#TRUNC" class="headerlink" title="TRUNC"></a>TRUNC</h3><p>trunc(x,y)，返回x按精度y截取后的值，y不为整数则截取y整数部分，y&gt;0则截取到y位小数，y&lt;0则截取到小数点向左第y位，小数前其它数据用0表示。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> trunc(<span class="number">5555.66666</span>,<span class="number">2.1</span>),trunc(<span class="number">5555.66666</span>,<span class="number">-2.6</span>),trunc(<span class="number">5555.033333</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：5555.67，5500，5555</p>
+<h3 id="SQRT"><a href="#SQRT" class="headerlink" title="SQRT"></a>SQRT</h3><p>sqrt(x)，返回x的平方根</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sqrt</span>(<span class="number">4</span>), <span class="keyword">sqrt</span>(<span class="number">10</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：2，3.16227766</p>
+<h3 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h3><h4 id="sin"><a href="#sin" class="headerlink" title="sin"></a>sin</h4><p>sin(x)，返回一个数字的正弦值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sin</span>(<span class="number">1</span>,<span class="number">5</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：0.99749498</p>
+<h4 id="sinh"><a href="#sinh" class="headerlink" title="sinh"></a>sinh</h4><p>sinh(x)，返回双曲正弦的值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sin</span>(<span class="number">20</span>),sinh(<span class="number">20</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：0.9129452，242582597.704895</p>
+<h4 id="cos"><a href="#cos" class="headerlink" title="cos"></a>cos</h4><p>cos(x)，返回一个数字的余弦值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">cos</span>(<span class="number">-3.1415927</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：-0.99999999</p>
+<h4 id="cosh"><a href="#cosh" class="headerlink" title="cosh"></a>cosh</h4><p>cosh(x)，返回双曲余弦的值</p>
+<h4 id="tan"><a href="#tan" class="headerlink" title="tan"></a>tan</h4><p>tan(x)，返回数字的正切值</p>
+<h4 id="tanh"><a href="#tanh" class="headerlink" title="tanh"></a>tanh</h4><p>tanh(x)，返回数字x的双曲正切值</p>
+<h4 id="asin"><a href="#asin" class="headerlink" title="asin"></a>asin</h4><p>asin(x)，给出x的反正弦值</p>
+<h4 id="acos"><a href="#acos" class="headerlink" title="acos"></a>acos</h4><p>acos(x)，给出x的反余弦值</p>
+<h4 id="atan"><a href="#atan" class="headerlink" title="atan"></a>atan</h4><p>atan(x)，给出x的反正切值</p>
+<hr>
+<h2 id="字符型函数"><a href="#字符型函数" class="headerlink" title="字符型函数"></a>字符型函数</h2><h3 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h3><p>ascii(x)，返回字符表达式最左端字符的ASCII 码值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ascii</span>(<span class="string">&#x27;A&#x27;</span>) A,<span class="keyword">ascii</span>(<span class="string">&#x27;a&#x27;</span>) a,<span class="keyword">ascii</span>(<span class="string">&#x27; &#x27;</span>) <span class="keyword">space</span>,<span class="keyword">ascii</span>(<span class="string">&#x27;示&#x27;</span>) hz <span class="keyword">from</span> dual; </span><br></pre></td></tr></table></figure>
+
+<p>返回值：65，97，32，51902</p>
+<h3 id="CHR"><a href="#CHR" class="headerlink" title="CHR"></a>CHR</h3><p>chr(x)，将ASCII 码转换为字符，x为0 ~ 255</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">chr</span>(<span class="number">54740</span>) zhao,<span class="keyword">chr</span>(<span class="number">65</span>) chr65 <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：赵，A</p>
+<h3 id="CONCAT"><a href="#CONCAT" class="headerlink" title="CONCAT"></a>CONCAT</h3><p>concat(x1, x2)，连接两个字符串</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>(<span class="string">&#x27;010-&#x27;</span>,<span class="string">&#x27;88888888&#x27;</span>)||<span class="string">&#x27;转23&#x27;</span> 高乾竞电话 <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：010-88888888转23</p>
+<h3 id="INITCAP"><a href="#INITCAP" class="headerlink" title="INITCAP"></a>INITCAP</h3><p>initcap(x)，返回字符串并将字符串的第一个字母变为大写，其它字母小写; </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> initcap(<span class="string">&#x27;smith abc aBC&#x27;</span>) upp <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：Smith Abc Abc</p>
+<h3 id="LOWER"><a href="#LOWER" class="headerlink" title="LOWER"></a>LOWER</h3><p>lower(x)，将字符串全部转为小写</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">lower</span>(<span class="string">&#x27;AaBbCcDd&#x27;</span>)AaBbCcDd <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：aabbccdd</p>
+<h3 id="UPPER"><a href="#UPPER" class="headerlink" title="UPPER"></a>UPPER</h3><p>UPPER(c1) ，将字符串全部转为大写</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">upper</span>(<span class="string">&#x27;AaBbCcDd&#x27;</span>) <span class="keyword">upper</span> <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p>返回值：AABBCCDD</p>
+<h3 id="NLS-INITCAP"><a href="#NLS-INITCAP" class="headerlink" title="NLS_INITCAP"></a>NLS_INITCAP</h3><p>nls_initcap(x)，返回字符串并将字符串的第一个字母变为大写，其它字母小写; </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> nls_initcap(<span class="string">&#x27;ab cde&#x27;</span>) <span class="string">&quot;test&quot;</span>, nls_initcap(<span class="string">&#x27;a c b d e&#x27;</span>,<span class="string">&#x27;nls_sort= SCHINESE_PINYIN_M&#x27;</span>) <span class="string">&quot;test1&quot;</span> <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<h3 id="NLS-UPPER"><a href="#NLS-UPPER" class="headerlink" title="NLS_UPPER"></a>NLS_UPPER</h3><p>nls_upper(x)，返回字符串并将字符串的转换为大写; </p>
+
+        </div>
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kai</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+		
+			<section id="comments" class="comments">
+			  <style>
+				.comments{margin:30px;padding:10px;background:#fff}
+				@media screen and (max-width:1000px){.comments{margin:auto;padding:10px;background:#fff}}
+			  </style>
+			  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+      el: '.valine_comment',
+      app_id: '0WvNq11JMneyKNonNFmIAmgL-gzGzoHsz',
+      app_key: 'cLBUVXzqIIqEHsV68ThcTXQn',
+      placeholder: 'Your comment here...',
+      notify: 'true',
+      verify: 'true',
+    });
+</script>
+			</section>
+		
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/05/21/%E5%89%91%E6%8C%87offer07/">剑指offer07</a>
+            
+            
+            <a class="next" rel="next" href="/2021/05/02/How%20to%20read%20a%20paper/">How to read a paper</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>Copyright © 2020 Kai. All rights reserved.</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
